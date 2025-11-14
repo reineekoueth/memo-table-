@@ -1,3 +1,186 @@
+/* === BODY ET BACKGROUND === */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0,0,0,0.6)),
+                url("kekeetsousou.jpg") center center / cover no-repeat fixed;
+    margin:0;
+    padding: 0;
+    color: #35e3fa;
+    min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+/* === HEADER FIXE === */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    color: white;
+    text-align: left;
+    padding: 15px 0;
+}
+.header h1 {
+    font-size: 25px;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.header #compteur {
+    font-size: 25px;
+    color: #00e1ff;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #000;
+    margin-top: 8px;
+}
+
+/* === CONTENEUR PRINCIPAL === */
+.centre {
+    width: 95%;
+    max-width: 1000px;
+    margin: 90px auto 30px;
+    text-align: center;
+}
+
+/* === LABELS === */
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffda06;
+    text-shadow: 1px 1px 4px #000;
+    margin-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* === BOUTONS === */
+button {
+    background-color: #0d7bf8;
+    border: none;
+    padding: 5px 10px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #fff;
+}
+button:hover {
+    background-color: #32f389;
+    transform: scale(1.08);
+}
+
+/* === INPUT TEXTE === */
+input[type="text"] {
+    font-size: 15px;
+    width: 300px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.9);
+    outline: none;
+    transition: all 0.3s ease;
+    margin-top: 0;
+}
+input[type="text"]:focus {
+    border-color: #ffe066;
+    box-shadow: 0 0 12px rgba(255,230,100,0.8);
+}
+
+/* === CONTENEUR TABLEAU CENTRÉ === */
+.table-container {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    height: 70vh;           /* prend toute la hauteur de l'écran */
+    width: 100%;
+    margin-top: 0;
+}
+/* === TABLEAU === */
+table {
+    border-collapse: collapse;
+    width: 100%;              /* largeur */
+    max-width: 900px;        /* pas de scroll */
+    font-family: Arial, sans-serif;
+    font-size: 20px;  
+    margin-top: -60px;     
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 5px 8px;      /* cellules plus grandes  */
+    text-align: center;
+    border-radius: 4px;
+}
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    font-size: 20px;         /* titre gros et lisible */
+}
+
+/* === EFFETS JS === */
+td.hidden { visibility: hidden; transform: scale(0); }
+td.correct { background-color: #8cff8c !important; color: #006400; }
+td.wrong { background-color: #ff6b6b !important; color: #800000; }
+td.show-correct { background-color: #65d6ff !important; color: #003366; }
+td.clignote { animation: clignoter 15s infinite; }
+
+@keyframes clignoter {
+    0%, 50%, 100% { background-color: #f514f5; }
+    25%, 75% { background-color: #e0ffe0; }
+}
+
+/* === MESSAGE === */
+#message {
+    font-weight: bold;
+    font-size: 28px;
+    color: #32f389;
+}
+
+/* === OVERLAY BRAVO === */
+#bravoOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 0, 0.8);
+    color: red;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100vh;
+    z-index: 9999;
+    animation: clignoterBravo 2s infinite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+@keyframes clignoterBravo {
+    0%,50%,100% { color: red; }
+    25%,75% { color: white; }
+}
+
+/* === RESPONSIVE TABLEAU ET ELEMENTS === */
+@media (max-width: 900px) {
+    .centre { margin-top: 180px; width: 95%; }
+    td { font-size: clamp(10px,4vw,18px); }
+    table { max-width: 600px; }
+}
+
+@media (max-width: 600px) {
+    /* Transforme tableau en cartes verticales */
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+    td {
+        font-size: clamp(8px,5vw,16px);
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    button { font-size: 24px; padding: 10px 20px; }
+    input[type="text"] { width: 80%; font-size: 28px; }
+}
 
 
 
