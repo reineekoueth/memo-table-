@@ -103,7 +103,7 @@ table {
     max-width: 900px;        /* pas de scroll */
     font-family: Arial, sans-serif;
     font-size: 20px;  
-    margin-top: -60px;     
+    margin-top: -40px;     
 }
 th, td {
     border: 1px solid #ccc;
@@ -181,6 +181,7 @@ td.clignote { animation: clignoter 15s infinite; }
     button { font-size: 24px; padding: 10px 20px; }
     input[type="text"] { width: 80%; font-size: 28px; }
 }
+
 
 
 
